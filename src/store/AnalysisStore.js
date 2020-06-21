@@ -7,7 +7,10 @@ class AnalysisStore {
     @observable analysisHepatitData = [];
     @observable analysisAllData = [];
     @observable analysisSelectedSessionData = [];
+<<<<<<< HEAD
     @observable compareAllData = [];
+=======
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
     @observable dataState = true;
 
     constructor() {
@@ -64,6 +67,7 @@ class AnalysisStore {
         }
     }
 
+<<<<<<< HEAD
     getCompareAnalysis= async () => {
         this.changeStateTrue();
         try {
@@ -78,6 +82,8 @@ class AnalysisStore {
         }
     }
 
+=======
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
     @action cleanAll = async () => {
         runInAction(() => {
                 this.hospitalsData = [];
@@ -93,9 +99,12 @@ class AnalysisStore {
     @action changeAnalysisData = (data) => {
         runInAction(() => { this.analysisAllData = data });
     }
+<<<<<<< HEAD
     @action changeCompareData = (data) => {
         runInAction(() => { this.compareAllData = data });
     }
+=======
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
     @action changeAnalysisSelectedSessionData = (data) => {
         runInAction(() => { this.analysisSelectedSessionData = data });
     }
@@ -117,9 +126,12 @@ class AnalysisStore {
     @action cleanHepatitData = () => {
         runInAction(() => { this.analysisHepatitData = [] });
     }
+<<<<<<< HEAD
     @action cleanCompareData = () => {
         runInAction(() => { this.compareAllData = [] });
     }
+=======
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
     
 }
 export default new AnalysisStore()

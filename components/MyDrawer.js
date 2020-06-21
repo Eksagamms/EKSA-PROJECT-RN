@@ -35,7 +35,11 @@ export default class MyDrawer extends Component
                 options={{ drawerLabel: 'Profil' , drawerIcon:() => (<Icon name="user" size={22}/>) }}
               />
               <Drawer.Screen
+<<<<<<< HEAD
                 name="Randevu"
+=======
+                name="Profile"
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
                 component={Appointment}
                 options={{ drawerLabel: 'Randevu' ,drawerIcon:() => (<Icon name="calendar" size={22}/>)}}
               />

@@ -9,7 +9,11 @@ class AnalysisProgress extends React.Component {
     onColorChange = (Value,MaxValue,MinValue)=>{
         if (Value > MaxValue) {
             return 'red'
+<<<<<<< HEAD
         } else if (Value <= MaxValue && Value >= MinValue){
+=======
+        } else if (Value < MaxValue && Value > MinValue){
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
             return 'green'
         }
         else

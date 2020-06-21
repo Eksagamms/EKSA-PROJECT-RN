@@ -169,10 +169,17 @@ class AppointmentStore {
         try {
             this.selectedDoctorTimeId = this.selectedDoctorTimeId == null ? 0 : this.selectedDoctorTimeId;
             this.changeStateTrue();
+<<<<<<< HEAD
             let response = await fetch("https://www.matmaca.com/api/appointment/postappointment?date=" + this.selectedDate + "&DoctorId=" + this.selectedDoctorId + "&HastaneId=" + this.selectedHospitalId + "&SectionId=" + this.selectedSectionId + "&complaint=Tekrar&userIdentityNumber=160313043&timeId="+ this.selectedDoctorTimeId)
             let json = await response.json();
 
             console.log("https://www.matmaca.com/api/appointment/postappointment?date=" + this.selectedDate + "&DoctorId=" + this.selectedDoctorId + "&HastaneId=" + this.selectedHospitalId + "&SectionId=" + this.selectedSectionId + "&complaint=Tekrar&userIdentityNumber=160313043&timeId="+ this.selectedDoctorTimeId);
+=======
+            let response = await fetch("https://www.matmaca.com/api/appointment/postappointment?date=" + this.selectedDate + "&DoctorId=" + this.selectedDoctorId + "&HastaneId=" + this.selectedHospitalId + "&SectionId=" + this.selectedSectionId + "&complaint=denemeMobil&userIdentityNumber=160313043&timeId="+ this.selectedDoctorTimeId)
+            let json = await response.json();
+
+            console.log("https://www.matmaca.com/api/appointment/postappointment?date=" + this.selectedDate + "&DoctorId=" + this.selectedDoctorId + "&HastaneId=" + this.selectedHospitalId + "&SectionId=" + this.selectedSectionId + "&complaint=denemeMobil&userIdentityNumber=160313043&timeId="+ this.selectedDoctorTimeId);
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
             console.log(json);
 
             if (json == false) {

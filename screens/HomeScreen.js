@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 
 import { StyleSheet, Text, PanResponder, View, ScrollView, TouchableOpacity } from 'react-native';
+<<<<<<< HEAD
 import { Chip, Badge, RadioButton, ActivityIndicator, Colors, Divider, Subheading, List, Caption, IconButton, Button } from 'react-native-paper'
+=======
+import { Chip, Badge, RadioButton, ActivityIndicator, Colors, Divider, Subheading, List, Caption, IconButton } from 'react-native-paper'
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
 import { Overlay, colors } from 'react-native-elements';
 import ProgressCircle from 'react-native-progress-circle'
 
@@ -10,7 +14,10 @@ import Search from '../components/Search'
 import BannerScreen from '../components/Banner'
 import Chips from '../components/Chips'
 import AnalysisProgress from '../components/AnalysisProgress'
+<<<<<<< HEAD
 import CompareProgress from '../components/CompareProgress'
+=======
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
 
 import { observer } from 'mobx-react';
 import AnalysisStore from '../src/store/AnalysisStore';
@@ -29,6 +36,7 @@ class Home extends Component {
             checked: "first",
             selectedAnalysisId: null,
             selectedAnalysisSessionId: null,
+<<<<<<< HEAD
             userIdentityId: null,
             compare: false
         }
@@ -39,6 +47,16 @@ class Home extends Component {
         this.setState({ userIdentityId: LoginStore.kisi.userIdentityNumber })
         console.log('Burada 2');
         console.log(this.props);
+=======
+            userIdentityId:null
+        }
+    }
+
+    componentDidMount()
+    {
+        console.log(LoginStore.kisi.userIdentityNumber);
+        this.setState({userIdentityId:LoginStore.kisi.userIdentityNumber})
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
         //Useridentity
     }
 
@@ -49,9 +67,14 @@ class Home extends Component {
     onclickBadge = (data) => {
         if (data.length == 0) {
             alert('Tahlil Bulunamadı !')
+<<<<<<< HEAD
             this.setState({ selectedAnalysisId: null,compare:false });
             AnalysisStore.changeAnalysisSelectedSessionData(null);
             AnalysisStore.changeCompareData();
+=======
+            this.setState({ selectedAnalysisId: null });
+            AnalysisStore.changeAnalysisSelectedSessionData(null);
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
         }
         else {
             this.setState({ overlayData: data, visible: true });
@@ -61,6 +84,7 @@ class Home extends Component {
 
     skeletonData = () => {
         if (this.state.selectedAnalysisId == null) {
+<<<<<<< HEAD
             if (this.state.compare == false) {
                 return (
                     <View>
@@ -95,11 +119,45 @@ class Home extends Component {
                 );
             }
 
+=======
+            return (
+                <View>
+                    <View>
+                        <Caption style={{ textAlign: "center" }}>Tahlil Seçiniz</Caption >
+                    </View>
+                    <View style={{ backgroundColor: 'white', borderColor: 'gray', borderWidth: 1, margin: 10, borderRadius: 20, padding: 10, flexDirection: 'row' }}>
+                        <View style={{ justifyContent: 'flex-start' }}>
+                            <ProgressCircle
+                                percent={0}
+                                radius={40}
+                                borderWidth={8}
+                                color="gray"
+                                shadowColor="#dfdfdf"
+                                bgColor="#fff"
+                            >
+                                <Text style={{ fontSize: 18, color: colors.grey0 }}>0</Text>
+                            </ProgressCircle>
+                        </View>
+                        <View style={{ justifyContent: 'center', padding: 5, width: '70%', marginLeft: 10 }}>
+                            <View style={{ justifyContent: 'center' }}>
+                                <Subheading style={{ color: 'green', backgroundColor: '#dfdfdf' }}></Subheading><Caption style={{ backgroundColor: '#dfdfdf', width: 60 }}></Caption>
+                                <Text style={{ backgroundColor: '#dfdfdf', height: 50, marginTop: 10 }}></Text>
+                            </View>
+                            <View style={{ justifyContent: 'center' }}>
+                                <Subheading style={{ color: 'green', backgroundColor: '#dfdfdf' }}></Subheading><Caption style={{ backgroundColor: '#dfdfdf', width: 60 }}></Caption>
+                                <Text style={{ backgroundColor: '#dfdfdf', height: 50, marginTop: 10 }}></Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+            );
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
         }
     }
 
     overlaySelectedData = (id, session) => {
         this.setState({ selectedAnalysisId: id, selectedAnalysisSessionId: session, visible: false })
+<<<<<<< HEAD
         AnalysisStore.changeCompareData();
         AnalysisStore.analysisValues(session);
     }
@@ -120,12 +178,20 @@ class Home extends Component {
         }
     }
 
+=======
+        AnalysisStore.analysisValues(session);
+    }
+
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
     data = () => {
         return (
             <View>
                 <Subheading style={{ textAlign: "center" }}>Tahlil Tarihi Seçiniz</Subheading >
                 <FlatList
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
                     numColumns={1}
                     data={this.state.overlayData == [] ? null : this.state.overlayData}
                     renderItem={({ item }) => (
@@ -151,7 +217,10 @@ class Home extends Component {
                     )}
                     keyExtractor={item => item.id}
                 />
+<<<<<<< HEAD
                 {this.compare()}
+=======
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
             </View>
         )
     }
@@ -179,9 +248,15 @@ class Home extends Component {
             return (
                 <ScrollView>
                     <View>
+<<<<<<< HEAD
                         <Header username={'Mehmet Uğur'} />
                         <Search value="ugur" />
                         <Chips props={this.props} />
+=======
+                        <Header username={LoginStore.kisi.userPersonalName} />
+                        <Search value="ugur" />
+                        <Chips />
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
                         <BannerScreen />
                     </View>
                     <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -216,7 +291,10 @@ class Home extends Component {
                     </View>
 
                     <AnalysisProgress data={AnalysisStore.analysisSelectedSessionData} />
+<<<<<<< HEAD
                     <CompareProgress data={AnalysisStore.compareAllData} />
+=======
+>>>>>>> 1f7fefa0e988504b9ccb82c0b90b2ece1425fa7d
                 </ScrollView >
 
             );
